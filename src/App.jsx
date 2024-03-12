@@ -16,7 +16,7 @@ function App() {
         {window.innerWidth <= 1120 }
         <img
           className='bgImg'
-          src={imgDesk}
+          src={imgMobile}
         />
 
         <div className="photoCard">
@@ -54,7 +54,7 @@ function App() {
         <div className="inputs">
           <label htmlFor='number'>CARD NUMBER</label>
           <input
-            type='number'
+            type='text'
             placeholder='e.g. 123 456 789'
             name='number'
           />
@@ -64,7 +64,7 @@ function App() {
           <div className='inputsDate'>
             <label htmlFor='mes'>EXP. DATE</label>
             <input 
-              type='number'
+              type='text'
               placeholder='MM'
               name='mes'
             />
@@ -73,7 +73,7 @@ function App() {
           <div className='inputsDate'>
             <label htmlFor='ano'>(MM/YY)</label>
             <input 
-              type='number'
+              type='text'
               placeholder='YY'
               name='ano'
             />
@@ -82,7 +82,7 @@ function App() {
           <div className='inputsDate'>
             <label htmlFor='cvc'>CVC</label>
             <input 
-              type='number'
+              type='text'
               placeholder='e. g. 123'
               name='cvc'
             />

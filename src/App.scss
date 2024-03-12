@@ -54,9 +54,10 @@ form{
     input{
         padding: 1.3rem;
         border-radius: 1.2rem;
-        color: #C6C1C7;
+        color: #524C56;
         border: 1px solid #C6C1C7;
         font-weight: 700;
+        font-size: 1.6rem;
     }
 
     ::-webkit-input-placeholder {
@@ -165,10 +166,11 @@ form{
 
 //DeskTop
 
-@media(min-width: 1120px){
+@media(min-width: 1020px){
     .page{
         display: flex;
         width: 100%;
+        height: 100vh;
     }
 
     .cads{
@@ -177,27 +179,22 @@ form{
 
         .bgImg{
             height: 100vh;
+            width: 47.1rem;
         }
     }
 
-    
     .photoCard{
 
-        .cardBack,
-        .cardFront{
-            width: 36.6rem;
-            height: 26.6rem;
-        }
         .photo1{
             position: absolute;
             bottom: 150px;
-            right: 99rem;
+            right: 95rem;
         }      
 
         .photo2{
             position: absolute;
             top: 30rem;
-            left: 20rem;
+            left: 25rem;
             background: transparent;
            
             .textCardFront{
@@ -207,7 +204,7 @@ form{
     }
 
     form{
-        width: 96rem;
-        padding: 20rem 30rem;
+        width: 108rem;
+        padding: 20rem 35rem;
     }
 }
