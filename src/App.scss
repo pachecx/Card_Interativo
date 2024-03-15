@@ -63,6 +63,10 @@ form{
     ::-webkit-input-placeholder {
         color: #CACACC;
     }
+
+    .error{
+        border: 1px solid red;
+    }
 }
 
 
@@ -89,6 +93,10 @@ form{
 
         ::-webkit-input-placeholder {
             color: #CACACC;
+        }
+
+        .error{
+            border: 1px solid red;
         }
 
     }
@@ -163,10 +171,24 @@ form{
     height: 13rem;
 }
 
+.ok{
+    text-align: center;
+
+    h1{
+        margin: 2rem auto 3.2rem;
+    }
+
+    p{
+        margin-bottom: 2rem;
+    }
+}
+
 .alertInput{
     color: red;
     font-size: 1.3rem;
+    margin-top: 2px;
 }
+
 
 
 //DeskTop
@@ -192,19 +214,35 @@ form{
 
         .photo1{
             position: absolute;
-            bottom: 150px;
-            right: 95rem;
+            bottom: 135px;
+            right: 90rem;
+
+            .cardBack{
+                width: 350px;
+                height: 200px;
+            }
+
+            .numberCardBack{
+                top: 11.9rem;
+            }
         }      
 
         .photo2{
             position: absolute;
-            top: 30rem;
-            left: 25rem;
+            top: 22rem;
+            left: 17rem;
             background: transparent;
+
+            .cardFront{
+                width: 350px;
+                height: 200px;
+            }
            
             .textCardFront{
                 top: -6rem;
-           }
+                height: 16rem;
+                width: 30rem;
+            }
         }
     }
 
