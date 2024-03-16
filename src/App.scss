@@ -30,14 +30,12 @@
             margin: -7.7rem 0 0 1.9rem;
         }
     }
-
 }
 
 form{
     padding: 2.4rem;
     width: 100%;
     background: #FBFBFB;
-
 }
 
 .inputs{
@@ -98,9 +96,7 @@ form{
         .error{
             border: 1px solid red;
         }
-
     }
-
 }
 
 .allDates .inputsDate:nth-child(3){
@@ -121,7 +117,6 @@ form{
     color: #ffff;
     font-size: 1.6rem;
 }
-
 
 .photo1{
 
@@ -189,10 +184,7 @@ form{
     margin-top: 2px;
 }
 
-
-
 //DeskTop
-
 @media(min-width: 1020px){
     .page{
         display: flex;
@@ -203,10 +195,12 @@ form{
     .cads{
         height: 100vh;
         width: 47.1rem;
+        background-image: url(./assets//bg-main-desktop.png);
 
         .bgImg{
             height: 100vh;
             width: 47.1rem;
+            display: none;
         }
     }
 
@@ -242,6 +236,10 @@ form{
                 top: -6rem;
                 height: 16rem;
                 width: 30rem;
+
+                .cardNumber{
+                    padding-top: 6rem;
+                }
             }
         }
     }

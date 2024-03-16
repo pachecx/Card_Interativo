@@ -4,14 +4,11 @@ import imgMobile from "./assets/bg-main-mobile.png";
 import backCard from './assets/bg-card-back.png';
 import frontCard from './assets/bg-card-front.png';
 import cardlogo from "./assets/card-logo.svg";
-import imgDesk from './assets/bg-main-desktop.png';
 import React from 'react';
-
 import { cardRegister, cardRequestData } from './schema/card.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export function App() {
 
@@ -29,15 +26,14 @@ export function App() {
   const [cardNumber, setCardNumber] = useState<string>('');
   const [dateM, setDateM] =  useState<string>();
   const [dateY, setDateY] =  useState<string>();  
-
   const [codSafe, setCodSafe] = useState<string>();
-
   const [cardOk, setCardOk] = useState<boolean>(false);
 
-  const onSubmit = () => {
-    console.log('deu certo')
-    setCardOk(true)
+  const onSubmit = (data: cardRequestData) => {
+    console.log('deu certo');
+    setCardOk(true);
     reset();
+    console.log(data);
   }
 
   const resetForm = () => {
@@ -46,8 +42,9 @@ export function App() {
     console.log(cardOk)
   }
 
+  //Separar a sequência em grupos de 4 numeros
   const renderCardNumber = () => {
-    if (!cardNumber) return ''; // Se não houver número de cartão, não há nada para exibir
+    if (!cardNumber) return ''; 
 
     const groupedNumbers = [];
     for (let i = 0; i < cardNumber.length; i += 4) {
@@ -56,7 +53,14 @@ export function App() {
     return groupedNumbers.join(' ');
   };
 
-  console.log(renderCardNumber())
+  const renderBar = () => {
+    if(!dateM){
+       return '';
+      }else{
+        return <span>/</span>;
+    }
+   
+  };
 
   return ( 
     <div className='page'>
@@ -83,16 +87,17 @@ export function App() {
               <span className='cardNumber'>{renderCardNumber()}</span>
               <div className='textName'>
                 <p>{name}</p>
-                <p>{dateM}/{dateY}</p>
+                <p>{dateM}
+                  <span>
+                    {renderBar()}
+                  </span>
+                  {dateY}
+                </p>
               </div>
             </div>
           </div>
-          
         </div>
       </div>
-
-
-
 
       <form onSubmit={handleSubmit(onSubmit)}>
         {cardOk === false ? (
@@ -109,12 +114,13 @@ export function App() {
               />
               {errors.name && <span className='alertInput'>{errors.name.message}</span>}
             </div>
+
             <div className="inputs">
               <label htmlFor='number'>CARD NUMBER</label>
               <input
                 type='number'
                 placeholder='e.g. 123 456 789'
-                {...register('number', {valueAsNumber: true})}
+                {...register('number')}
                 className={errors.codSafe ? "error" : ""}
                 name='number'
                 onChange={(e) => setCardNumber(e.target.value)}
@@ -128,13 +134,12 @@ export function App() {
                 <input 
                   type='number'
                   placeholder='MM'
-                  {...register('expDateM', {valueAsNumber: true})}
+                  {...register('expDateM')}
                   className={errors.codSafe ? "error" : ""}
                   name='expDateM'
                   onChange={(e) => setDateM(e.target.value)}
                 />
                 {errors.expDateM && <span className='alertInput'>{errors.expDateM.message}</span>}
-
               </div>
 
               <div className='inputsDate'>
@@ -142,7 +147,7 @@ export function App() {
                 <input 
                   type='number'
                   placeholder='YY'
-                  {...register('expDateY', {valueAsNumber: true})}
+                  {...register('expDateY')}
                   className={errors.codSafe ? "error" : ""}
                   name='expDateY'
                   onChange={(e) => setDateY(e.target.value)}
@@ -155,7 +160,7 @@ export function App() {
                 <input 
                   type='number'
                   placeholder='e. g. 123'
-                  {...register('codSafe', {valueAsNumber: true})}
+                  {...register('codSafe')}
                   className={errors.codSafe ? "error" : ""}
                   name='codSafe'
                   onChange={(e) => setCodSafe(e.target.value)}
