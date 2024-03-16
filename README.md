@@ -4,7 +4,7 @@
 Este é um projeto criado como parte do desafio proposto pelo site Frontend Mentor. O objetivo do desafio é construir um formulário de cadastro de cartão de crédito utilizando React, TypeScript e a biblioteca de validação de esquemas Zod.
 
 ## Demonstração
-Você pode visualizar a demonstração do projeto [aqui](link para a demonstração).
+Você pode visualizar a demonstração do projeto [aqui](https://pachecx.github.io/Card_Interativo/).
 
 ## Descrição
 O formulário de cadastro de cartão de crédito é uma aplicação web desenvolvida utilizando a biblioteca React para a construção da interface do usuário. TypeScript é empregado para adicionar tipagem estática ao código, proporcionando um desenvolvimento mais seguro e robusto. Além disso, a validação dos dados do formulário é realizada utilizando a biblioteca Zod, garantindo que as entradas do usuário estejam corretas antes de serem enviadas.
